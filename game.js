@@ -5,7 +5,7 @@ function computerPlay() {
     return play;
 };
 
-function roundI(playerSelection, computerSelection) {
+function game(playerSelection, computerSelection) {
     if (playerSelection === 'rock' && computerSelection === 'paper') {
         return 'You lose. Paper beats rock.';
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
@@ -14,16 +14,25 @@ function roundI(playerSelection, computerSelection) {
         return 'It\'s a tie.';
     } else if (playerSelection === 'rock' && computerSelection === 'rock') {
         return 'It\'s a tie.';
+    } else if  (playerSelection === 'rock' && computerSelection === 'scissors') {
+        return 'You win. Rock beats scissors.';
+    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        return 'You lose. Rock beats scissors.';
+    } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+        return 'It\'s a tie.';
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        return 'You lose. Paper beats scissors.';
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        return 'You win. Scissors beats paper.';
     } else {
-        return 'Unofficial round';
-    }
+        return 'Invalid input';
+    };
 };
-console.log(roundI(prompt('Enter your choice: '), computerPlay()));
-
-
-
-
-
+console.log(game(prompt('Choose between rock, paper or scissors: '), computerPlay()));
+console.log(game(prompt('Choose between rock, paper or scissors: '), computerPlay()));
+console.log(game(prompt('Choose between rock, paper or scissors: '), computerPlay()));
+console.log(game(prompt('Choose between rock, paper or scissors: '), computerPlay()));
+console.log(game(prompt('Choose between rock, paper or scissors: '), computerPlay()));
 
 
 
